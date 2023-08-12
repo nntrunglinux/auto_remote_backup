@@ -2,13 +2,17 @@ from pydantic import BaseSettings
 
 
 class Setting(BaseSettings):
-    HOST: str = ""
-    PORT: int = 0
-    DATABASE: str = ""
-    USER: str = ""
-    PASSWORD: str = ""
+    PGHOST: str = ""
+    PGPORT: int = 0
+    PGDATABASE: str = ""
+    PGUSER: str = ""
+    PGPASSWORD: str = ""
     BACKUP_DIR: str = ""
-    FILESTORE_PATH: str = ""
+
+    SOURCE_USER: str = ""
+    SOURCE_PASSWORD: str = ""
+    SOURCE_IP: str = ""
+    SOURCE_FOLDER_PATH: str = ""
 
     class Config:
         env_file = ".env"
